@@ -24,9 +24,7 @@ Interface:
 
 <h3>Linha de raciocínio</h3>
 Comecei fazendo o design de como seria feito as telas, após isso parti para estudar a api, todos dados que ela me fornecia e como os consumir,
-vi que tinha a possibilidade de ao invés de utilizar os métodos mais conhecidos para realizar as requisições da api como httpclient ou restsharp a api possuía uma biblioteca no .net que facilitava as requisições <a href="https://github.com/egbakou/RESTCountries.NET">esse</a>, estudei como deveria fazer para utilizar esse novo método e de primeira tive alguns bugs por conta de estar com a do restsharp instalado e ambas se colidiam, após resolver esse erro consegui fazer a primeira requisição de todos países na tela principal e comecei a organizar em uma tabela os países retornados... Após isso passei o nome do pais que fosse selecionado para o controller e o utilizei para fazer uma nova requisição a esse pais especifico e retornar seus dados. Ao concluir esse método eu fui em busca de fazer o filtro, mas tive uma dificuldade em passar para o controller o dado inserido por conta de estar já utilizando um model de List na view, passei então utilizando json mas meu tempo estava acabando após isso e não consegui terminar o filtro. Meus próximos passos seriam terminar o filtro adaptar o controller para receber requisições externas fazer o mapeamento de rotas e inserir os extras citados abaixo
-
-
+vi que tinha a possibilidade de ao invés de utilizar os métodos mais conhecidos para realizar as requisições da api como httpclient ou restsharp a api possuía uma biblioteca no .net que facilitava as requisições <a href="https://github.com/egbakou/RESTCountries.NET">esse</a>, estudei como deveria fazer para utilizar esse novo método e de primeira tive alguns bugs por conta de estar com a do restsharp instalado e ambas se colidiam, após resolver esse erro consegui fazer a primeira requisição de todos países na tela principal e comecei a organizar em uma tabela os países retornados... Após isso passei o nome do pais que fosse selecionado para o controller e o utilizei para fazer uma nova requisição a esse pais especifico e retornar seus dados. Ao concluir esse método eu fui em busca de fazer o filtro, mas tive uma dificuldade em passar para o controller o dado inserido por conta de estar já utilizando um model de List na view, passei então utilizando json mas meu tempo estava acabando após isso e não consegui terminar o filtro. Meus próximos passos seriam terminar o filtro adaptar o controller para receber requisições externas fazer o mapeamento de rotas e inserir os extras citados abaixo.
 
 
 
@@ -41,6 +39,7 @@ vi que tinha a possibilidade de ao invés de utilizar os métodos mais conhecido
 
 
 <h4>O que faltou completar no projeto?</h4>
+
 - Filtros > Cheguei a completar a função mas por conta de um bug achei melhor entregar sem do que correr o risco de quebrar o projeto.
 - Adaptar controller para conseguir receber requisições get externas.
 - Mapeamento de rota entre dois países.
@@ -48,6 +47,7 @@ vi que tinha a possibilidade de ao invés de utilizar os métodos mais conhecido
 - Filtro retornando lista de países a partir do nome inserido, sigla ou moeda.
 
 <h4>Extras que pretendia fazer:</h4>
+
 - Paginação após 10 países
 - Opção de ver todos sem paginação
 - Filtros em ordem A-Z ou Z-A
