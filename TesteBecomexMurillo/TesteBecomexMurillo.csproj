@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Models\Countries\Currency.cs" />
+    <Content Remove="Models\Countries\Flag.cs" />
+    <Content Remove="Models\Countries\Language.cs" />
+    <Content Remove="Models\Countries\RegionalBloc.cs" />
+    <Content Remove="Models\Countries\Translations.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.14" />
+    <PackageReference Include="RESTCountries.NET" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\GetService\" />
+  </ItemGroup>
+
+</Project>

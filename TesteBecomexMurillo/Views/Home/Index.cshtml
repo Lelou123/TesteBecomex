@@ -1,0 +1,117 @@
+﻿@using RESTCountries.Models;
+@model List<RESTCountries.Models.Country>
+
+@{
+	ViewData["Title"] = "Página Principal";
+}
+
+
+<div class="text-center">
+	<h1 class="display-4">Bem vindo ao teste de Murillo</h1>
+</div>
+
+<form asp-action="Search" asp-controller="Home" method="get">
+	<div class="text-center mt-5">
+		<div class="form-group">
+			<h3>Pesquise um pais</h3>
+
+			<label class="control-label">Pesquise(Nome, Moeda ou Singla)</label>
+			<input  class="SearchForm" />
+			<button  type="submit" onclick="SendSearch()" value="Create" class="btn btn-primary ">Buscar</button>
+		</div>
+	</div>
+</form>
+
+
+
+
+
+<table class="table text-center mt-5">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">
+				<h4>Paises Disponiveis</h4>
+			</th>
+			<th scope="col">
+				<h4>Sigla</h4>
+			</th>
+			<th scope="col">
+				<h4>Moeda</h4>
+			</th>
+			<th scope="col">
+				<h4>Bandeira</h4>
+			</th>
+			<th scope="col">
+				<h4>Blocos</h4>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					<a href="Home/PaisEsp?Pais=@item.Name">@item.Name</a>
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Cioc)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Currencies)
+				</td>
+				<td>
+					<img width="45%" height="" src="@item.Flag.Png" alt="minha bandeira">
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.RegionalBlocs)
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+	function SendSearch(){
+		var listForms = document.getElementsByClassName('SearchForm');
+		var itens = "";
+
+		for(var i = 0; i < listForms.length; i++)
+		{
+			itens += listForms[i].value;
+
+		}
+		
+		var json = {
+			Buscar: itens
+		}
+
+
+			$.ajax(
+			{
+				url: '/Home/Search',
+				type: 'POST',
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify(json),
+				success: function (data) {
+					window.alert('sucess Post' + data);
+				},
+				failure: function (data) {
+					window.alert('error Post' + data);
+				}
+			}
+			);
+
+	}
+
+
+
+</script>
+

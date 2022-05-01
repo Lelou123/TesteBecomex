@@ -1,0 +1,112 @@
+﻿@using RESTCountries.Models;
+@model List<RESTCountries.Models.Country>
+
+
+@foreach (var item in Model)
+{
+	<div class="text-center">
+		<img src="@item.Flag.Png" alt="minha bandeira">
+	</div>
+}
+
+
+
+<table class="table text-center mt-5">
+	<thead class="thead-gray">
+		<tr>
+			<th scope="col">
+				<h4>País</h4>
+			</th>
+			<th scope="col">
+				<h4>Sigla</h4>
+			</th>
+			<th scope="col">
+				<h4>Moeda</h4>
+			</th>
+			<th scope="col">
+				<h4>Blocos</h4>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Cioc)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Currencies)
+				</td>
+
+				<td>
+					@Html.DisplayFor(modelItem=> item.RegionalBlocs)
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+<table class="table text-center mt-5">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">
+				<h4>População</h4>
+			</th>
+			<th scope="col">
+				<h4>Timezone</h4>
+			</th>
+			<th scope="col">
+				<h4>Moedas</h4>
+			</th>
+			<th scope="col">
+				<h4>Linguas</h4>
+			</th>
+			<th scope="col">
+				<h4>Capital</h4>
+			</th>
+			<th scope="col">
+				<h4>Blocos</h4>
+			</th>
+			<th scope="col">
+				<h4>Fronteiras</h4>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Population)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Timezones)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Currencies)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Languages)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.Capital)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem=> item.RegionalBlocs)
+				</td>				
+				<td>
+					@Html.DisplayFor(modelItem=> item.Borders)
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class="center">
+	<a asp-action="Index" asp-controller="Home" class="btn btn-outline-primary mt-4">Voltar</a>
+</div>
